@@ -17,7 +17,6 @@ const SelectBox: FC<Props> = ({setFilters, selectType, label, children}) => {
       </label>
       <select
         onChange={e => {
-          console.log(typeof e.target.value);
           setFilters(prev => ({
             ...prev,
             [selectType]: e.target.value,

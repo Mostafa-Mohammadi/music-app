@@ -2,9 +2,9 @@
 import useMusicMethod from 'hooks/useMusicMethod';
 
 //Componenets
-import {ImageCard} from 'components/imageCard';
-import {Navbar} from 'components/navbar';
-import {SelectBox} from 'components/selectBox';
+import {ImageCard} from 'components';
+import {Navbar} from 'components';
+import {SelectBox} from 'components';
 
 //Types
 import type {TMusic, TGenere} from 'types';
@@ -13,7 +13,7 @@ export const MusicContainer = () => {
   const {musicsList, filterer, setFilters} = useMusicMethod();
   return (
     <>
-      <Navbar />
+      <Navbar setFilters={setFilters} />
       <div className="container mx-auto p-3">
         <div className="flex justify-between">
           <div className="mb-5 w-1/3">
@@ -37,7 +37,7 @@ export const MusicContainer = () => {
               selectType="year"
               setFilters={setFilters}
             >
-              {/* use new Set to remove years duplicatio */}
+              {/* use new Set to remove years duplication */}
               {Array(
                 ...new Set(
                   musicsList?.videos?.map((item: TMusic) => item.release_year),
