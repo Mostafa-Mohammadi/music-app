@@ -15,7 +15,7 @@ const ImageCard: FC<Props> = ({data}) => {
           objectFit="fill"
           className="rounded-t-lg absolute w-full h-36"
           src={data?.image_url!}
-          alt={data?.title}
+          alt={data?.title!}
         />
       </div>
       <div className="flex h-1/2 justify-center  text-center items-center flex-col p-3 ">
@@ -33,4 +33,4 @@ const ImageCard: FC<Props> = ({data}) => {
   );
 };
 
-export default ImageCard;
+export {ImageCard};
